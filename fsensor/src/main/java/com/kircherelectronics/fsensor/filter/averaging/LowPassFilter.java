@@ -68,7 +68,7 @@ public class LowPassFilter extends AveragingFilter
         // individually vary by a relatively large time frame, so we use an
         // averaging technique with the number of sensor updates to
         // determine the delivery rate.
-        float dt = 1 / (count++ / ((timestamp - startTime) / 1000000000.0f));
+        float dt = 1 / (1 / ((20*1000*1000) / 1000000000.0f));
 
         float alpha = timeConstant / (timeConstant + dt);
 
